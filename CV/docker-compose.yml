@@ -1,0 +1,10 @@
+services:
+  zola:
+    image: ghcr.io/getzola/zola:v0.19.1
+    container_name: zola-dev
+    working_dir: /site
+    volumes:
+      - ./site:/site
+    command: serve --interface 0.0.0.0 --port 8080 --base-url localhost
+    ports:
+      - "8080:8080"
